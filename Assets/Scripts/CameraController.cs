@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraController : MonoBehaviour {
+public class CameraCotroller : MonoBehaviour
+{
+   [SerializeField] private GameObject target; // Référence à la balle
+   [SerializeField] private Vector3 offset; // Référence à la balle
 
-	public GameObject player;
+    void Start()
+    {
+    }
 
-	private Vector3 offset;
-
-	void Start ()
-	{
-		offset = transform.position - player.transform.position;
-	}
-
-	void LateUpdate ()
-	{
-		transform.position = player.transform.position + offset;
-	}
+    void Update()
+    {
+        transform.position = target.transform.position + offset;
+    }
 }
